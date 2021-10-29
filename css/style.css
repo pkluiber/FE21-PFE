@@ -1,0 +1,755 @@
+.background {
+    background: url(/images/gamebackground.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.atari,
+.pong,
+.gameboy,
+.pacman,
+.nes,
+.cd,
+.n64,
+.playstation,
+.gamecube {
+    border-radius: 8px;
+    width: 15%;
+    height: 15%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 62.5%;
+    font-size: 10px;
+}
+
+
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 3rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+    color: #00E676;
+}
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+/* Home section */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/images/navbar.jpg);
+    background-position: center top;
+    background-size: cover;
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #111;
+        /*same background color of navbar*/
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        padding: 20px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+
+
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #111;
+}
+
+.myH2 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.myP {
+    text-align: justify;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 20px;
+}
+
+@media all and (max-width:700px) {
+    .myP {
+        padding: 2%;
+    }
+}
+
+
+/* .container {
+
+<footer><div class="footer-subscribe-wrapper font-monospace mt-5"><!-- End Subscribe Area --><!-- Start Footer Area --><div class="footer-area ptb-100 pt-4 mt-5"><div class="container "><div class="row"><div class="col-lg-4 col-md-6 col-sm-6 pb-5"><div class="single-footer-widget "><div class="footer-heading "><h3>About Us</h3></div><p>Founded in 2016,
+CodeFactory Wien follows the concept of programming boot camps of Anglo-American countries. Our goal is to provide time-efficient and very practice-oriented training with the aim of the fastest possible career entry as a junior developer. Our courses are tailored to newcomers,
+people who want to change careers in the second or third educational path as well as people who are interested in an application-oriented education. </p><ul class="footer-social "><li><a href="https://www.facebook.com/CodeFactoryVienna/ "><i class="fa fa-facebook-f "></i></a></li><li><a href="https://www.instagram.com/accounts/login/ "><i class="fa fa-instagram "></i></a></li><li><a href="https://twitter.com/codefactoryvie "><i class="fa fa-twitter-square "></i></a></li><li><a href="https://www.youtube.com/channel/UCJE5xsfz-bLmVb5emobgOkw "><i class="fa fa-youtube-play "></i></a></li><li><a href="https://www.linkedin.com/company/codefactory-vienna "><i class="fa fa-linkedin "></i></a></li></ul></div></div><div class="col-lg-2 col-md-6 col-sm-6 pb-5"><div class="single-footer-widget "><div class="footer-heading "><h3>Our Courses</h3></div><ul class="footer-quick-links "><div *ngFor="let course of courses; index as coursesId"><li><a routerLink="/courses/{{coursesId}}"> {
+    {
+        course.name
+    }
+}
+
+</a></li></div></ul></div></div><div class="col-lg-2 col-md-6 col-sm-6 pb-5 "><div class="single-footer-widget "><div class="footer-heading "><h3>Useful Links</h3></div><ul class="footer-quick-links "><li><a routerLink="team">About Us</a></li><li><a routerLink="contactus">Contact Us</a></li></ul></div></div><div class="col-lg-4 col-md-6 col-sm-6 pb-5 "><div class="single-footer-widget "><div class="footer-heading "><h3>Contact Info</h3></div><div class="footer-info-contact "><i class="fa fa-phone "></i><h3>Phone</h3><span><a href="tel:0802235678 ">0660 6673655</a></span></div><div class="footer-info-contact "><i class="fa fa-envelope "></i><h3>Email</h3><span><a href="mailto:office@codefactory.wien ">office@codefactory.wien</a></span></div><div class="footer-info-contact "><i class="fa fa-map-marker "></i><h3>Address</h3><span>Kettenbrückengasse 23/2/12,
+1050 Vienna,
+Austria</span></div></div></div></div></div></div><!-- End Footer Section --></div></footer><footer><div class="footer-subscribe-wrapper font-monospace mt-5"><!-- End Subscribe Area --><!-- Start Footer Area --><div class="footer-area ptb-100 pt-4 mt-5"><div class="container "><div class="row"><div class="col-lg-4 col-md-6 col-sm-6 pb-5"><div class="single-footer-widget "><div class="footer-heading "><h3>About Us</h3></div><p>Founded in 2016,
+CodeFactory Wien follows the concept of programming boot camps of Anglo-American countries. Our goal is to provide time-efficient and very practice-oriented training with the aim of the fastest possible career entry as a junior developer. Our courses are tailored to newcomers,
+people who want to change careers in the second or third educational path as well as people who are interested in an application-oriented education. </p><ul class="footer-social "><li><a href="https://www.facebook.com/CodeFactoryVienna/ "><i class="fa fa-facebook-f "></i></a></li><li><a href="https://www.instagram.com/accounts/login/ "><i class="fa fa-instagram "></i></a></li><li><a href="https://twitter.com/codefactoryvie "><i class="fa fa-twitter-square "></i></a></li><li><a href="https://www.youtube.com/channel/UCJE5xsfz-bLmVb5emobgOkw "><i class="fa fa-youtube-play "></i></a></li><li><a href="https://www.linkedin.com/company/codefactory-vienna "><i class="fa fa-linkedin "></i></a></li></ul></div></div><div class="col-lg-2 col-md-6 col-sm-6 pb-5"><div class="single-footer-widget "><div class="footer-heading "><h3>Our Courses</h3></div><ul class="footer-quick-links "><div *ngFor="let course of courses; index as coursesId"><li><a routerLink="/courses/{{coursesId}}"> {
+    {
+        course.name
+    }
+}
+
+</a></li></div></ul></div></div><div class="col-lg-2 col-md-6 col-sm-6 pb-5 "><div class="single-footer-widget "><div class="footer-heading "><h3>Useful Links</h3></div><ul class="footer-quick-links "><li><a routerLink="team">About Us</a></li><li><a routerLink="contactus">Contact Us</a></li></ul></div></div><div class="col-lg-4 col-md-6 col-sm-6 pb-5 "><div class="single-footer-widget "><div class="footer-heading "><h3>Contact Info</h3></div><div class="footer-info-contact "><i class="fa fa-phone "></i><h3>Phone</h3><span><a href="tel:0802235678 ">0660 6673655</a></span></div><div class="footer-info-contact "><i class="fa fa-envelope "></i><h3>Email</h3><span><a href="mailto:office@codefactory.wien ">office@codefactory.wien</a></span></div><div class="footer-info-contact "><i class="fa fa-map-marker "></i><h3>Address</h3><span>Kettenbrückengasse 23/2/12,
+1050 Vienna,
+Austria</span></div></div></div></div></div></div><!-- End Footer Section --></div></footer>margin-top: 0px!important;
+
+} */
+
+.footer-subscribe-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    background: radial-gradient(#040c16, #d0cdda);
+}
+
+.footer-heading {
+    margin-bottom: 25px;
+}
+
+.footer-heading h3 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 0 0 0;
+    position: relative;
+    border-bottom: 1px solid #777;
+    padding-bottom: 10px;
+}
+
+.single-footer-widget .footer-social {
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.single-footer-widget .footer-social li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.single-footer-widget .footer-social li:last-child {
+    margin-right: 0;
+}
+
+.single-footer-widget .footer-social i {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    color: #7b68ee;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    text-align: center;
+}
+
+.single-footer-widget .footer-social i::before {
+    font-size: 15px;
+}
+
+.single-footer-widget .footer-social i:hover {
+    background-color: #7b68ee;
+    color: #ffffff;
+    border: 1px solid #7b68ee;
+}
+
+.single-footer-widget p {
+    font-size: 15px;
+    color: #ececec;
+    font-weight: 400;
+}
+
+.single-footer-widget .footer-heading {
+    margin-bottom: 25px;
+}
+
+.single-footer-widget .footer-heading h3 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 0 0 0;
+}
+
+.single-footer-widget .footer-quick-links {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.single-footer-widget .footer-quick-links li {
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+.single-footer-widget .footer-quick-links li:last-child {
+    padding-bottom: 0;
+}
+
+.single-footer-widget .footer-quick-links li a {
+    display: inline-block;
+    color: #ececec;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.single-footer-widget .footer-quick-links li a:hover {
+    color: #7b68ee;
+    text-decoration: underline !important;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.single-footer-widget .footer-info-contact {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 16px;
+}
+
+.single-footer-widget .footer-info-contact:last-child {
+    margin-bottom: 0;
+}
+
+.single-footer-widget .footer-info-contact i {
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0px;
+}
+
+.single-footer-widget .footer-info-contact i::before {
+    font-size: 20px;
+}
+
+.single-footer-widget .footer-info-contact h3 {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.single-footer-widget .footer-info-contact span {
+    font-size: 15px;
+    color: #ececec;
+    font-weight: 400;
+}
+
+.single-footer-widget .footer-info-contact span a {
+    font-size: 15px;
+    color: #ececec;
+    font-weight: 400;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.single-footer-widget .footer-info-contact span a:hover {
+    color: #7b68ee;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.mynav {
+    background-color: #B4D2E7;
+    height: 15vh;
+    color: #A1A6B4;
+}
+
+.product-title {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.product-price {
+    color: black;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.product-image {
+    object-fit: cover;
+    min-height: 40vh;
+    width: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.product-button {
+    background-color: #A1A6B4;
+    border: 1px solid #B4D2E7;
+    color: white;
+    text-shadow: 1px #B4D2E7;
+    font-size: 1.5em;
+    padding: 0.4em;
+}
+
+.product-button:hover {
+    background-color: #5aa3d8;
+    color: #eff1f5;
+}
+
+.cart-row {
+    border-bottom: 1px solid #B4D2E7;
+    color: #000000;
+}
+
+.cart-header {
+    color: #3392d6;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #5aa3d8;
+    margin-right: 20px;
+}
+
+.plus,
+.minus {
+    color: black;
+    font-size: 2.5em;
+}
+
+.btn-purchase {
+    font-size: 1.5em;
+    background-color: #B4D2E7;
+}
+
+.btn-purchase:hover {
+    background-color: #5085aa;
+}
+
+@media only screen and (max-width: 995px) {
+    .mynav {
+        height: 20vh;
+    }
+}
+
+.cart-item-title {
+    color: black;
+}
+
+.cart-total-price {
+    color: black;
+    font-size: xx-large;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.history {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.bacgroundimg {
+    width: 100%;
+    height: 40vw;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/teamImages/heroteam.jpeg");
+    /* Background Image */
+}
+
+.hero h2 {
+    font-size: 3vw;
+    color: white;
+    position: absolute;
+    top: 34vh;
+    left: 45vw;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 65px;
+    line-height: 1.5;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container-contact {
+    border-radius: 0.5rem;
+    background-color: #f2f2f2;
+    padding: 2rem;
+}
+
+
+/* .container-fluid {
+    margin-left: 1vh;
+} */
+
+.card-header {
+    font-weight: bolder;
+}
